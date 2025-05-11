@@ -20,7 +20,10 @@ class Category(PublishedModel):
 
 
 class Topping(PublishedModel):
-    title = models.CharField('Название', max_length=256)
+    title = models.CharField(
+        'Название',
+        max_length=256,
+    )
     slug = models.SlugField('Слаг', max_length=64, unique=True)
 
     class Meta:
@@ -32,7 +35,11 @@ class Topping(PublishedModel):
 
 
 class Wrapper(PublishedModel):
-    title = models.CharField('Название', max_length=256)
+    title = models.CharField(
+        'Название',
+        max_length=256,
+        help_text='Уникальное название обёртки, не более 256 символов'
+    )
 
     class Meta:
         verbose_name = 'обёртка'
