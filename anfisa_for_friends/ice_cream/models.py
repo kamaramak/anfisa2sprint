@@ -52,6 +52,11 @@ class Wrapper(PublishedModel):
 class IceCream(PublishedModel):
     title = models.CharField('Название', max_length=256)
     description = models.TextField('Описание')
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    output_order = models.PositiveSmallIntegerField(
+        'Порядок отображения',
+        default=100
+    )
     wrapper = models.OneToOneField(
         Wrapper,
         verbose_name='Обёртка',
